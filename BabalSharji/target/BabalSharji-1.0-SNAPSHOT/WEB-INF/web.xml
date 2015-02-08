@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <context-param>
+        <param-name>cssPath</param-name>
+        <param-value>css/</param-value>
+    </context-param>
+    <context-param>
+        <param-name>jsPath</param-name>
+        <param-value>js/</param-value>
+    </context-param>
+    <context-param>
+        <param-name>imgPath</param-name>
+        <param-value>img/</param-value>
+    </context-param>
     <session-config>
         <session-timeout>
             30
@@ -9,7 +21,7 @@
         <jsp-property-group>
             <description>Standard components</description>
             <display-name>components</display-name>
-            <url-pattern>/WEB-INF/view</url-pattern>
+            <url-pattern>/WEB-INF/view/*</url-pattern>
             <include-prelude>/WEB-INF/jspf/header.jspf</include-prelude>
             <include-coda>/WEB-INF/jspf/footer.jspf</include-coda>
         </jsp-property-group>

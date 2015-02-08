@@ -1,12 +1,12 @@
 package com.babalsharji.session;
 
-import com.babalsharji.entity.AdvertisemntPhotos;
+import com.babalsharji.entity.AdvertisementPhotos;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 @Stateless
-public class AdvertisemntPhotosFacade extends AbstractFacade<AdvertisemntPhotos> {
+public class AdvertisementPhotosFacade extends AbstractFacade<AdvertisementPhotos> {
     @PersistenceContext(unitName = "com.babalsharji_BabalSharji_war_1.0-SNAPSHOTPU")
     private EntityManager em;
 
@@ -15,8 +15,8 @@ public class AdvertisemntPhotosFacade extends AbstractFacade<AdvertisemntPhotos>
         return em;
     }
 
-    public AdvertisemntPhotosFacade() {
-        super(AdvertisemntPhotos.class);
+    public AdvertisementPhotosFacade() {
+        super(AdvertisementPhotos.class);
     }
     
 }

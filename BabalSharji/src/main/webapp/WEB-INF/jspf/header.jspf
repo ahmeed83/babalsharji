@@ -1,5 +1,7 @@
 <%@ page pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
-    <head></head>
+    <head>
+        <link rel="stylesheet" type="text/css" href="${initParam.cssPath}bootstrap.css">
+    </head>
     <body>

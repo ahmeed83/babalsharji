@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "LinkController", urlPatterns = {"/",
+@WebServlet(name = "LinkController", urlPatterns = {
     "/index",
     "/home"
 })
@@ -17,7 +17,7 @@ public class LinkController extends HttpServlet {
             throws ServletException, IOException {
         String userPath = request.getServletPath();
         userPath = "/home";
-        System.out.println("dasdfasdfasdf");
+        System.out.println("sfaadfs");
         try {
             request.getRequestDispatcher("/WEB-INF/view" + userPath + ".jsp").forward(request, response);
         } catch (Exception ex) {

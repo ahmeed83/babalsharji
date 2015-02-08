@@ -13,17 +13,17 @@ import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
-@Table(name = "advertisemnt_photos")
+@Table(name = "advertisement_photos")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "AdvertisemntPhotos.findAll", query = "SELECT a FROM AdvertisemntPhotos a"),
-    @NamedQuery(name = "AdvertisemntPhotos.findById", query = "SELECT a FROM AdvertisemntPhotos a WHERE a.id = :id"),
-    @NamedQuery(name = "AdvertisemntPhotos.findByName", query = "SELECT a FROM AdvertisemntPhotos a WHERE a.name = :name"),
-    @NamedQuery(name = "AdvertisemntPhotos.findByAlt", query = "SELECT a FROM AdvertisemntPhotos a WHERE a.alt = :alt"),
-    @NamedQuery(name = "AdvertisemntPhotos.findByPath", query = "SELECT a FROM AdvertisemntPhotos a WHERE a.path = :path"),
-    @NamedQuery(name = "AdvertisemntPhotos.findBySize", query = "SELECT a FROM AdvertisemntPhotos a WHERE a.size = :size"),
-    @NamedQuery(name = "AdvertisemntPhotos.findByAdvertismentId", query = "SELECT a FROM AdvertisemntPhotos a WHERE a.advertismentId = :advertismentId")})
-public class AdvertisemntPhotos implements Serializable {
+    @NamedQuery(name = "AdvertisementPhotos.findAll", query = "SELECT a FROM AdvertisementPhotos a"),
+    @NamedQuery(name = "AdvertisementPhotos.findById", query = "SELECT a FROM AdvertisementPhotos a WHERE a.id = :id"),
+    @NamedQuery(name = "AdvertisementPhotos.findByName", query = "SELECT a FROM AdvertisementPhotos a WHERE a.name = :name"),
+    @NamedQuery(name = "AdvertisementPhotos.findByAlt", query = "SELECT a FROM AdvertisementPhotos a WHERE a.alt = :alt"),
+    @NamedQuery(name = "AdvertisementPhotos.findByPath", query = "SELECT a FROM AdvertisementPhotos a WHERE a.path = :path"),
+    @NamedQuery(name = "AdvertisementPhotos.findBySize", query = "SELECT a FROM AdvertisementPhotos a WHERE a.size = :size"),
+    @NamedQuery(name = "AdvertisementPhotos.findByAdvertismentId", query = "SELECT a FROM AdvertisementPhotos a WHERE a.advertismentId = :advertismentId")})
+public class AdvertisementPhotos implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
@@ -45,10 +45,10 @@ public class AdvertisemntPhotos implements Serializable {
     @Column(name = "advertisment_id")
     private Integer advertismentId;
 
-    public AdvertisemntPhotos() {
+    public AdvertisementPhotos() {
     }
 
-    public AdvertisemntPhotos(Integer id) {
+    public AdvertisementPhotos(Integer id) {
         this.id = id;
     }
 
@@ -110,10 +110,10 @@ public class AdvertisemntPhotos implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof AdvertisemntPhotos)) {
+        if (!(object instanceof AdvertisementPhotos)) {
             return false;
         }
-        AdvertisemntPhotos other = (AdvertisemntPhotos) object;
+        AdvertisementPhotos other = (AdvertisementPhotos) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -122,7 +122,7 @@ public class AdvertisemntPhotos implements Serializable {
 
     @Override
     public String toString() {
-        return "com.babalsharji.entity.AdvertisemntPhotos[ id=" + id + " ]";
+        return "com.babalsharji.entity.AdvertisementPhotos[ id=" + id + " ]";
     }
     
 }

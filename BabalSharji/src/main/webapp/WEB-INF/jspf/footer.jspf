@@ -1,4 +1,5 @@
-<%-- any content can be specified here e.g.: --%>
 <%@ page pageEncoding="UTF-8" %>
+    <script type="text/javascript" src="${initParam.jsPath}jquery.min.js"></script>
+    <script type="text/javascript" src="${initParam.jsPath}bootstrap.js"></script>
 </body>
 </html>

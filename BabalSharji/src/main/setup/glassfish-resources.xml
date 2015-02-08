@@ -10,7 +10,6 @@
         <property name="URL" value="jdbc:mysql://185.28.20.10:3306/u105689825_bab?zeroDateTimeBehavior=convertToNull"/>
         <property name="driverClass" value="com.mysql.jdbc.Driver"/>
     </jdbc-connection-pool>
-    <jdbc-resource enabled="true" jndi-name="Bab" object-type="user" pool-name="mysql_u105689825_bab_u105689825_rootPool"/>
-    <jdbc-resource enabled="true" jndi-name="jdbc/bab" object-type="user" pool-name="mysql_u105689825_bab_u105689825_rootPool"/>
-    <jdbc-resource enabled="true" jndi-name="ad" object-type="user" pool-name="mysql_u105689825_bab_u105689825_rootPool"/>
+    <jdbc-resource enabled="true" jndi-name="tyty" object-type="user" pool-name="mysql_u105689825_bab_u105689825_rootPool"/>
+    <jdbc-resource enabled="true" jndi-name="koekkoek" object-type="user" pool-name="mysql_u105689825_bab_u105689825_rootPool"/>
 </resources>
