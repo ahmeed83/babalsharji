@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.babalsharji.session;
 
 import com.babalsharji.entity.Advertisements;
@@ -5,6 +10,10 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+/**
+ *
+ * @author tsl20897
+ */
 @Stateless
 public class AdvertisementsFacade extends AbstractFacade<Advertisements> {
     @PersistenceContext(unitName = "com.babalsharji_BabalSharji_war_1.0-SNAPSHOTPU")
