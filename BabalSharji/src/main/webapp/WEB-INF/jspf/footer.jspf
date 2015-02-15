@@ -1,5 +1,16 @@
 <%@ page pageEncoding="UTF-8" %>
-    <script type="text/javascript" src="${initParam.jsPath}jquery.min.js"></script>
-    <script type="text/javascript" src="${initParam.jsPath}bootstrap.js"></script>
+<div class="footer">
+    <div class="container">
+        <div class="col-md-8" style="margin: 10px;">
+            <div style="display:inline-block; padding-right: 2em;"><a href="#">Info</a></div>
+            <div style="display:inline-block; padding-right: 2em;"><a href="#">Contact</a></div>
+            <div style="display:inline-block; padding-right: 2em;"><a href="#">Terms</a></div>
+            <div style="display:inline-block; padding-right: 2em;"><a href="#">Privacy</a></div>
+        </div>
+        <p class="text-muted" style="margin-top: 10px;text-align: right">Powered by A. Aziz and T. van Sloten</p>
+    </div>
+</div>
+<script type="text/javascript" src="${initParam.jsPath}jquery.min.js"></script>
+<script type="text/javascript" src="${initParam.jsPath}bootstrap.js"></script>
 </body>
 </html>
