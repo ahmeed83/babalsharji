@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="3388601131">
+    <data-source source="LOCAL" name="MySQL - u105689825_bab@185.28.20.10" uuid="5cdbecee-fa95-4873-8634-f99f3eec1bba">
+      <driver-ref>mysql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://185.28.20.10:3306/u105689825_bab</jdbc-url>
+      <user-name>u105689825_root</user-name>
+      <user-password>dfd9dfdcdfcedfc8df98dfcedfc2df9edfdcdfdd</user-password>
+      <driver-properties>
+        <property name="zeroDateTimeBehavior" value="convertToNull" />
+        <property name="tinyInt1isBit" value="false" />
+      </driver-properties>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
