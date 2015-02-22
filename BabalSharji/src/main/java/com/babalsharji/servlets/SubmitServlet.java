@@ -1,34 +1,40 @@
 package com.babalsharji.servlets;
 
+import com.babalsharji.entity.Users;
+import com.babalsharji.session.UsersFacade;
+import com.babalsharji.util.Encryption;
 import java.io.IOException;
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "LinkController", urlPatterns = {
-    "/index",
-    "/home",
-    "/register"
-})
-public class LinkController extends HttpServlet {
+@WebServlet(name = "SubmitServlet", urlPatterns = {"/submit/*"})
+public class SubmitServlet extends HttpServlet {
+    
+    @EJB
+    private UsersFacade uf;
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String userPath = request.getServletPath();
+        String userPath = request.getRequestURI().replace("/BabalSharji/submit/", "");
+
         switch (userPath) {
-            case "":
-                
+            case "user":
+                Encryption e = Encryption.getInstance();
+                Users user = new Users();
+                user.setEmail(request.getParameter("email"));
+                user.setFirstname(request.getParameter("firstname"));
+                user.setLastname(request.getParameter("lastname"));
+                user.setTelephone(request.getParameter("telephone"));
+                user.setPassword(e.encryptPassword(request.getParameter("password")));
+                uf.create(user);
                 break;
-         }
-        
-        try {
-            request.getRequestDispatcher("/WEB-INF/view" + userPath + ".jsp").forward(request, response);
-        } catch (Exception ex) {
-            ex.printStackTrace();
         }
-        response.setContentType("text/html;charset=UTF-8");
+        
+        response.sendRedirect("../home");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -69,5 +75,4 @@ public class LinkController extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 }
