@@ -51,7 +51,7 @@
                 <div class="navbar-collapse collapse">
                     <div class="navbar-right">
                         <button class="btn btn-success navbar-btn" style="margin-right: 10px;">Place Advertisement</button>
-                        <button class="btn btn-default navbar-btn">login</button>
+                        <a href="login" class="btn btn-default navbar-btn">login</a>
                     </div>
                     <div style="margin-top: 65px; padding-bottom: 5px;">
                         <form role="form">

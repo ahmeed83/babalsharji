@@ -6,6 +6,7 @@
 package com.babalsharji.session;
 
 import com.babalsharji.entity.Users;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -16,6 +17,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class UsersFacade extends AbstractFacade<Users> {
+
     @PersistenceContext(unitName = "com.babalsharji_BabalSharji_war_1.0-SNAPSHOTPU")
     private EntityManager em;
 
@@ -27,5 +29,8 @@ public class UsersFacade extends AbstractFacade<Users> {
     public UsersFacade() {
         super(Users.class);
     }
-    
+
+    public List<Users> getUserByEmail(String email) {
+        return em.createNamedQuery("Users.findByEmail", Users.class).setParameter("email", email).getResultList();
+    }
 }

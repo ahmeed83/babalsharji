@@ -1,25 +1,57 @@
 package com.babalsharji.servlets;
 
+import com.babalsharji.entity.Users;
+import com.babalsharji.session.UsersFacade;
+import com.babalsharji.util.Encryption;
 import java.io.IOException;
+import java.util.List;
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet(name = "LinkController", urlPatterns = {
     "/index",
     "/home",
-    "/register"
+    "/register",
+    "/login",
+    "/submitlogin"
 })
 public class LinkController extends HttpServlet {
+    @EJB
+    private UsersFacade usersFacade;
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String userPath = request.getServletPath();
         switch (userPath) {
-            case "":
+            case "/submitlogin":
+                System.out.println("GUHJBGFDTFGHJBGFRGHJ");
+                String encryptedPass;
+                String email = request.getParameter("email");
+                String password = request.getParameter("password");
+                Encryption encryption = Encryption.getInstance();
                 
+                List<Users> userList = usersFacade.getUserByEmail(request.getParameter("email"));
+                Users user = null;
+                
+                if(userList.size() > 0){
+                    user = userList.get(userList.size()-1);
+                }
+
+                if(user != null){
+                    encryptedPass = encryption.encryptPassword(password);
+                    if(user.getPassword().equals(encryptedPass)){
+                        HttpSession session = request.getSession(true);
+                        session.setAttribute("id", user.getId());
+                        response.sendRedirect("home");
+                    }
+                } else {
+                    response.sendRedirect("login");
+                }
                 break;
          }
         
