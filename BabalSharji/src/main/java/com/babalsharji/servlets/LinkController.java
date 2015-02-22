@@ -9,15 +9,20 @@ import java.io.IOException;
 
 @WebServlet(name = "LinkController", urlPatterns = {
     "/index",
-    "/home"
+    "/home",
+    "/register",
+    "/registeruser"
 })
 public class LinkController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String userPath = request.getServletPath();
-        userPath = "/home";
-        System.out.println("sfaadfs");
+        switch (userPath) {
+            case "registeruser":
+                
+                break;
+         }
         try {
             request.getRequestDispatcher("/WEB-INF/view" + userPath + ".jsp").forward(request, response);
         } catch (Exception ex) {
