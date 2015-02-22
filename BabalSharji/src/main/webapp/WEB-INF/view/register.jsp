@@ -1,13 +1,13 @@
 <div class="container">
     <div class="row">
-        <form action="registeruser" method="post">
+        <form action="submit/user" method="post" onsubmit="return checkForm()">
             <div class="col-md-6" style="margin-top: 5%;">
                 <div class="row">
                     <div class="col-md-6">
                         <input type="text" class="form-control input-lg" name="firstname" placeholder="First name">
                     </div>
                     <div class="col-md-6">
-                        <input type="text" class="form-control input-lg" name="lastname" placeholder="Last name">
+                        <input type="text" class="form-control input-lg" name="lastname" placeholder="Last name" required>
                     </div>
                 </div>
                 <div class="row" style="margin-top: 15px;">
@@ -17,20 +17,20 @@
                 </div>
                 <div class="row" style="margin-top: 15px;">
                     <div class="col-md-12">
-                        <input type="text" class="form-control input-lg" name="email" placeholder="Email address">
+                        <input type="email" class="form-control input-lg" name="email" placeholder="Email address" required>
                     </div>
                 </div>
                 <div class="row" style="margin-top: 15px;">
                     <div class="col-md-6">
-                        <input type="password" class="form-control input-lg" name="password" placeholder="Password">
+                        <input type="password" class="form-control input-lg" name="password" placeholder="Password" required>
                     </div>
                     <div class="col-md-6">
-                        <input type="password" class="form-control input-lg" name="passwordcontrol" placeholder="Retype Password">
+                        <input type="password" class="form-control input-lg" name="passwordcontrol" placeholder="Retype Password" required>
                     </div>
                 </div>
                 <div class="row" style="margin-top: 15px;">
                     <div class="col-md-12">
-                        <button class="btn btn-info col-md-2" onclick="setAgreement(this)"><span
+                        <button class="btn btn-info col-md-2" onclick="setAgreement(this)" type="button"><span
                                 class="glyphicon glyphicon-unchecked"></span> Agree
                         </button>
                         <div style="display:block;" class="col-md-10">By clicking agree you are agreeing to our <a href="#">terms
@@ -70,4 +70,15 @@
             toggle = false;
         }
     }
+    function checkForm(){
+        if(!toggle) {
+            alert("Please agree to our Terms of use.");
+            return false;
+        } else if(!($("input[name='password']").val() === $("input[name='passwordcontrol']").val())) {
+            alert("Please retype your password.");
+            return false;
+        }
+        return true;
+    }
+    
 </script>
