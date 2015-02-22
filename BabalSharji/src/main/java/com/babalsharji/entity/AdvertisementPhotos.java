@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.babalsharji.entity;
 
 import java.io.Serializable;
@@ -17,10 +12,6 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
-/**
- *
- * @author tsl20897
- */
 @Entity
 @Table(name = "advertisement_photos")
 @XmlRootElement
@@ -133,5 +124,5 @@ public class AdvertisementPhotos implements Serializable {
     public String toString() {
         return "com.babalsharji.entity.AdvertisementPhotos[ id=" + id + " ]";
     }
-    
+
 }

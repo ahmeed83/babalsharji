@@ -1,25 +1,12 @@
-<<<<<<< HEAD
-com\babalsharji\entity\Users_.class
 com\babalsharji\servlets\LinkController.class
 com\babalsharji\session\AdvertisementPhotosFacade.class
-com\babalsharji\entity\AdvertisementPhotos.class
-com\babalsharji\entity\Advertisements.class
-com\babalsharji\entity\Advertisements_.class
-com\babalsharji\entity\Users.class
-com\babalsharji\session\AdvertisementsFacade.class
+com\babalsharji\servlets\UserProfileController.class
 com\babalsharji\entity\AdvertisementPhotos_.class
-com\babalsharji\session\UsersFacade.class
+com\babalsharji\session\AdvertisementsFacade.class
+com\babalsharji\entity\Users.class
 com\babalsharji\session\AbstractFacade.class
-=======
-com/babalsharji/entity/AdvertisementPhotos_.class
-com/babalsharji/entity/Advertisements_.class
-com/babalsharji/entity/Users.class
-com/babalsharji/session/AdvertisementsFacade.class
-com/babalsharji/session/UsersFacade.class
-com/babalsharji/entity/AdvertisementPhotos.class
-com/babalsharji/session/AdvertisementPhotosFacade.class
-com/babalsharji/servlets/LinkController.class
-com/babalsharji/entity/Advertisements.class
-com/babalsharji/session/AbstractFacade.class
-com/babalsharji/entity/Users_.class
->>>>>>> 93f63ade84876417c25e9db20939d59d2b36e0e5
+com\babalsharji\entity\Advertisements_.class
+com\babalsharji\entity\Users_.class
+com\babalsharji\entity\Advertisements.class
+com\babalsharji\entity\AdvertisementPhotos.class
+com\babalsharji\session\UsersFacade.class

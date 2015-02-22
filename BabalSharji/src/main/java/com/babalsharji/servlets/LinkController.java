@@ -1,28 +1,21 @@
 package com.babalsharji.servlets;
 
+import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
 @WebServlet(name = "LinkController", urlPatterns = {
     "/index",
-    "/home",
-    "/register",
-    "/registeruser"
+    "/home"
 })
 public class LinkController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String userPath = request.getServletPath();
-        switch (userPath) {
-            case "registeruser":
-                
-                break;
-         }
         try {
             request.getRequestDispatcher("/WEB-INF/view" + userPath + ".jsp").forward(request, response);
         } catch (Exception ex) {
