@@ -1,5 +1,5 @@
-<<<<<<< HEAD
 D:\projecten\BabalSharji\babalsharji\BabalSharji\src\main\java\com\babalsharji\session\AbstractFacade.java
+D:\projecten\BabalSharji\babalsharji\BabalSharji\src\main\java\com\babalsharji\servlets\SubmitServlet.java
 D:\projecten\BabalSharji\babalsharji\BabalSharji\src\main\java\com\babalsharji\servlets\LinkController.java
 D:\projecten\BabalSharji\babalsharji\BabalSharji\src\main\java\com\babalsharji\entity\AdvertisementPhotos.java
 D:\projecten\BabalSharji\babalsharji\BabalSharji\src\main\java\com\babalsharji\entity\Advertisements.java
@@ -7,13 +7,3 @@ D:\projecten\BabalSharji\babalsharji\BabalSharji\src\main\java\com\babalsharji\s
 D:\projecten\BabalSharji\babalsharji\BabalSharji\src\main\java\com\babalsharji\session\AdvertisementsFacade.java
 D:\projecten\BabalSharji\babalsharji\BabalSharji\src\main\java\com\babalsharji\entity\Users.java
 D:\projecten\BabalSharji\babalsharji\BabalSharji\src\main\java\com\babalsharji\session\AdvertisementPhotosFacade.java
-=======
-/Users/ahmed/java_projects/git.local/babalsharji/BabalSharji/src/main/java/com/babalsharji/session/AdvertisementsFacade.java
-/Users/ahmed/java_projects/git.local/babalsharji/BabalSharji/src/main/java/com/babalsharji/session/UsersFacade.java
-/Users/ahmed/java_projects/git.local/babalsharji/BabalSharji/src/main/java/com/babalsharji/session/AbstractFacade.java
-/Users/ahmed/java_projects/git.local/babalsharji/BabalSharji/src/main/java/com/babalsharji/entity/Users.java
-/Users/ahmed/java_projects/git.local/babalsharji/BabalSharji/src/main/java/com/babalsharji/entity/AdvertisementPhotos.java
-/Users/ahmed/java_projects/git.local/babalsharji/BabalSharji/src/main/java/com/babalsharji/servlets/LinkController.java
-/Users/ahmed/java_projects/git.local/babalsharji/BabalSharji/src/main/java/com/babalsharji/session/AdvertisementPhotosFacade.java
-/Users/ahmed/java_projects/git.local/babalsharji/BabalSharji/src/main/java/com/babalsharji/entity/Advertisements.java
->>>>>>> 93f63ade84876417c25e9db20939d59d2b36e0e5

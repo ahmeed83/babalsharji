@@ -10,7 +10,7 @@
     </context-param>
     <context-param>
         <param-name>imgPath</param-name>
-        <param-value>img/</param-value>
+        <param-value>img/site/</param-value>
     </context-param>
     <session-config>
         <session-timeout>

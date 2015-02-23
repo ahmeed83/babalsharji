@@ -3,5 +3,82 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="${initParam.cssPath}bootstrap.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <style type="text/css">
+            .thumbnail-anchor {
+                border: none !important;
+            }
+            .thumbnail-anchor:hover {
+                border: 1px solid black
+            }
+            html {
+                position: relative;
+                min-height: 100%;
+            }
+            body {
+                margin-bottom: 50px;
+            }
+            .footer {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: 50px;
+                background-color: #f5f5f5;
+            }
+        </style>
     </head>
     <body>
+        <div class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#" style="font-size: 30px;">Bab Al-Sharji</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <div class="navbar-right">
+                        <button class="btn btn-success navbar-btn" style="margin-right: 10px;">Place Advertisement</button>
+                        <button class="btn btn-default navbar-btn">login</button>
+                    </div>
+                    <div style="margin-top: 65px; padding-bottom: 5px;">
+                        <form role="form">
+                            <div class="input-group col-md-4" style="display: inline-table; margin-right: 20px">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-info" type="button">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+                            </div>
+                            <div class="input-group col-md-2" style="display: inline-table; margin-right: 20px;">
+                                <select id="test" class="form-control">
+                                    <option value="null">Choose a category</option>
+                                    <option value="volvo">Car</option>
+                                    <option value="saab">Computer</option>
+                                </select>
+                            </div>
+                            <div class="input-group col-md-2" style="display: inline-table">
+                                <select id="test2" class="form-control">
+                                    <option value="null">Choose a District</option>
+                                    <option value="volvo">Car</option>
+                                    <option value="saab">Computer</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
