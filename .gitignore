@@ -60,8 +60,11 @@ nb-configuration.xml
 
 ## Plugin-specific files:
 
-# IntelliJ
-out/
+# Intellij
+.idea/
+*.iml
+*.iws
+
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
