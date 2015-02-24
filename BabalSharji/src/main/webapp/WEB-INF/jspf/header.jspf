@@ -34,6 +34,24 @@
                 height: 50px;
                 background-color: #f5f5f5;
             }
+            #loginDialog {
+                border-radius: 20px;
+                border: none;
+            }
+            #loginDialog label {
+                color: #847D7D;
+            }
+            
+            #loginDialog::backdrop {
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+            #loginDialog .input-lg {
+                height: 32px;
+                margin-bottom: 15px;
+            }
+            #loginDialog .btn {
+                height: 32px;
+            }
         </style>
     </head>
     <body>
@@ -51,7 +69,8 @@
                 <div class="navbar-collapse collapse">
                     <div class="navbar-right">
                         <button class="btn btn-success navbar-btn" style="margin-right: 10px;">Place Advertisement</button>
-                        <a href="login" class="btn btn-default navbar-btn">login</a>
+                        <button class="btn btn-success navbar-btn" onclick="showLoginDialog()">login</button>
+                        <!--<a href="login" class="btn btn-default navbar-btn">login</a>-->
                     </div>
                     <div style="margin-top: 65px; padding-bottom: 5px;">
                         <form role="form">
@@ -82,3 +101,27 @@
                 </div>
             </div>
         </div>
+    <dialog class="col-md-4" id="loginDialog">
+        <div class="col-md-offset-1 col-md-10">
+            <form action="submitlogin" method="POST" onsubmit="">
+                <label>email </label><input type="email" name="email"  class="form-control input-lg"/>
+                <label>password </label><input type="password" name="password" class="form-control input-lg"/>
+                <input type="submit" value="login" class="btn btn-success" />
+            </form>            
+        </div>
+    </dialog>
+    <script>
+    function showLoginDialog() {
+        var dialog = document.getElementById("loginDialog");
+        dialog.showModal();
+        dialog.addEventListener('click', function(){
+            var rect = dialog.getBoundingClientRect();
+            var isInDialog=(rect.top <= event.clientY && event.clientY <= rect.top + rect.height
+            && rect.left <= event.clientX && event.clientX <= rect.left + rect.width);
+            if (!isInDialog) {
+                dialog.close();
+            }
+            dialog.removeEventListener('click');
+        });
+    }
+    </script>

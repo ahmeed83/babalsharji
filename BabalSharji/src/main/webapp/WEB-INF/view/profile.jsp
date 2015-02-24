@@ -1,10 +1,22 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<style>
+    .table-user-information{
+        table-layout:fixed;
+    }
+    .table-user-information .form-control {
+        width: 50%;
+        display: inline-block;
+        height: 23px;
+    }
+</style>
 <c:choose>
     <c:when test="${user != null}">
         <div class="container">
             <div class="row">
-                <h3 style="border-bottom: 1px solid black; padding-bottom: 10px;"><c:out value="${user.getFirstname()} ${user.getLastname()}"/></h3>
+                <h3 style="border-bottom: 1px solid #ddd; padding-bottom: 10px;"><c:out value="${user.getFirstname()} ${user.getLastname()}"/>
+                    <button class="btn btn-success pull-right">edit</button>
+                </h3>
                 <a href="#">
                     <div class="thumbnail col-md-3" style="width: 200px; display: inline-block; margin-right: 50px;">
 
@@ -14,36 +26,86 @@
                     </div>
                 </a>
                 <div class="col-md-9 col-lg-9 "> 
-                    <table class="table table-user-information">
-                        <tbody>
-                            <tr>
-                                <td>Name</td>
-                                <td><c:out value="${user.getFirstname()} ${user.getLastname()}"/></td>
-                            </tr>
+                    <c:choose>
+                        <c:when test="${edit != true}">
+                            <table class="table table-user-information">
+                                <tbody>
+                                    <tr>
+                                        <td>Name</td>
+                                        <td><c:out value="${user.getFirstname()} ${user.getLastname()}"/></td>
+                                    </tr>
 
-                            <tr>
-                                <td>Date of Birth</td>
-                                <td><c:out value="${userDoB}"/></td>
-                            </tr>
-                            <tr>
-                            <tr>
-                                <td>Gender</td>
-                                <td><c:out value="${user.getGender()}"/></td>
-                            </tr>
-                            <tr>
-                                <td><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Home Address</td>
-                                <td><c:out value="${user.getAddress()}"/></td>
-                            </tr>
-                            <tr>
-                                <td><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Email</td>
-                                <td><a href="<c:out value="${user.getEmail()}"/>"> <c:out value="${user.getEmail()}"/> </a></td>
-                            </tr>
-                            <tr>
-                                <td><span class="glyphicon glyphicon-phone" aria-hidden="true"></span> Phone Number</td>
-                                <td><c:out value="${phoneNumber}"/></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                                    <tr>
+                                        <td>Date of Birth</td>
+                                        <td><c:out value="${userDoB}"/></td>
+                                    </tr>
+                                    <tr>
+                                    <tr>
+                                        <td>Gender</td>
+                                        <td><c:out value="${user.getGender()}"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Home Address</td>
+                                        <td><c:out value="${user.getAddress()}"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Email</td>
+                                        <td><a href="<c:out value="${user.getEmail()}"/>"> <c:out value="${user.getEmail()}"/> </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="glyphicon glyphicon-phone" aria-hidden="true"></span> Phone Number</td>
+                                        <td><c:out value="${phoneNumber}"/></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </c:when>
+                        <c:otherwise>   
+                            <form action="" method="POST">
+                                <table class="table table-user-information">
+                                    <tbody>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>
+                                                <input class="form-control" type="text" name="firstname" placeholder="firstname" value="<c:out value="${user.getFirstname()}"/>"/>
+                                                <br>
+                                                <input style="margin-top: 5px;" class="form-control" type="text" name="lastname" placeholder="lastname" value="<c:out value="${user.getLastname()}"/>"/>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Date of Birth</td>
+                                            <td>
+                                                <input class="form-control" type="date" name="dob" value="<c:out value="${userDoB}"/>"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                        </tr><tr>
+                                            <td>Gender</td>
+                                            <td>male</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Home Address</td>
+                                            <td>
+                                                <input class="form-control" type="text" name="address" value="<c:out value="${user.getAddress()}"/>"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Email</td>
+                                            <td>
+                                                <input class="form-control" type="email" name="email" value="<c:out value="${user.getEmail()}"/>" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="glyphicon glyphicon-phone" aria-hidden="true"></span> Phone Number</td>
+                                            <td>
+                                                <input class="form-control" type="tel" name="phone" value="<c:out value="${phoneNumber}"/>"/>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </form>
+                        </c:otherwise>
+                    </c:choose>
                 </div>
             </div>
 

@@ -29,7 +29,6 @@ public class LinkController extends HttpServlet {
         String userPath = request.getServletPath();
         switch (userPath) {
             case "/submitlogin":
-                System.out.println("GUHJBGFDTFGHJBGFRGHJ");
                 String encryptedPass;
                 String email = request.getParameter("email");
                 String password = request.getParameter("password");
