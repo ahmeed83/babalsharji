@@ -10,16 +10,13 @@
         height: 23px;
     }
 </style>
-<c:choose>
-    <c:when test="${user != null}">
         <div class="container">
             <div class="row">
                 <h3 style="border-bottom: 1px solid #ddd; padding-bottom: 10px;"><c:out value="${user.getFirstname()} ${user.getLastname()}"/>
-                    <button class="btn btn-success pull-right">edit</button>
+                    <a href="editprofile" class="btn btn-success pull-right">edit</a>
                 </h3>
                 <a href="#">
                     <div class="thumbnail col-md-3" style="width: 200px; display: inline-block; margin-right: 50px;">
-
                         <img src="http://www.localcrimenews.com/wp-content/uploads/2013/07/default-user-icon-profile.png" alt="" class="img-circle img-responsive">
                         <br>
                         <p class="text-center">Change Profile</p>
@@ -37,7 +34,7 @@
 
                                     <tr>
                                         <td>Date of Birth</td>
-                                        <td><c:out value="${userDoB}"/></td>
+                                        <td><c:out value="${user.getSimpleDateofbirth()}"/></td>
                                     </tr>
                                     <tr>
                                     <tr>
@@ -54,7 +51,7 @@
                                     </tr>
                                     <tr>
                                         <td><span class="glyphicon glyphicon-phone" aria-hidden="true"></span> Phone Number</td>
-                                        <td><c:out value="${phoneNumber}"/></td>
+                                        <td><c:out value="${user.getSimpleTelephone()}"/></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -75,7 +72,7 @@
                                         <tr>
                                             <td>Date of Birth</td>
                                             <td>
-                                                <input class="form-control" type="date" name="dob" value="<c:out value="${userDoB}"/>"/>
+                                                <div class="span5 col-md-5" id="sandbox-container"><input type="text"></div>
                                             </td>
                                         </tr>
                                         <tr>
@@ -98,7 +95,7 @@
                                         <tr>
                                             <td><span class="glyphicon glyphicon-phone" aria-hidden="true"></span> Phone Number</td>
                                             <td>
-                                                <input class="form-control" type="tel" name="phone" value="<c:out value="${phoneNumber}"/>"/>
+                                                <input class="form-control" type="tel" name="phone" value="<c:out value="${user.getSimpleTelephone()}"/>"/>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -179,8 +176,3 @@
                 </div>
             </div>
         </div>
-    </c:when>
-    <c:otherwise>
-        
-    </c:otherwise>
-</c:choose>

@@ -1,6 +1,7 @@
 package com.babalsharji.entity;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -32,6 +33,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Users.findByPhoto", query = "SELECT u FROM Users u WHERE u.photo = :photo"),
     @NamedQuery(name = "Users.findByPassword", query = "SELECT u FROM Users u WHERE u.password = :password")})
 public class Users implements Serializable {
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -102,6 +104,14 @@ public class Users implements Serializable {
         return telephone;
     }
 
+    public String getSimpleTelephone() {
+        if(this.telephone != null) return "";
+        String number = this.getTelephone();
+        String formatedNumber = String.format("%s-%s %s %s", number.substring(0, 2),
+                number.substring(2, 5), number.substring(5, 8), number.substring(8, 10));
+        return formatedNumber;
+    }
+
     public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
@@ -116,6 +126,12 @@ public class Users implements Serializable {
 
     public Date getDateofbirth() {
         return dateofbirth;
+    }
+
+    public String getSimpleDateofbirth() {
+        if (this.dateofbirth == null) return "";
+        SimpleDateFormat df = new SimpleDateFormat("MM/dd/YYYY");
+        return df.format(this.getDateofbirth());
     }
 
     public void setDateofbirth(Date dateofbirth) {

@@ -18,6 +18,7 @@ import javax.servlet.http.HttpSession;
     "/home",
     "/register",
     "/login",
+    "/logout",
     "/submitlogin"
 })
 public class LinkController extends HttpServlet {
@@ -26,8 +27,14 @@ public class LinkController extends HttpServlet {
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        HttpSession session;
         String userPath = request.getServletPath();
         switch (userPath) {
+            case "/logout":
+                session = request.getSession();
+                session.invalidate();
+                response.sendRedirect("home");
+                break;
             case "/submitlogin":
                 String encryptedPass;
                 String email = request.getParameter("email");
@@ -44,8 +51,11 @@ public class LinkController extends HttpServlet {
                 if(user != null){
                     encryptedPass = encryption.encryptPassword(password);
                     if(user.getPassword().equals(encryptedPass)){
-                        HttpSession session = request.getSession(true);
-                        session.setAttribute("id", user.getId());
+                        session = request.getSession(true);
+                        session.setAttribute("userid", user.getId());
+                        user = usersFacade.find(user.getId());
+                        session.setAttribute("name", user.getFirstname() +" "+ user.getLastname());
+                        
                         response.sendRedirect("home");
                     }
                 } else {
