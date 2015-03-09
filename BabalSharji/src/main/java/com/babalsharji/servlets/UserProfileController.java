@@ -37,8 +37,9 @@ public class UserProfileController extends HttpServlet {
                     
                     user.setFirstname(params.get("firstname")[0]);
                     user.setLastname(params.get("lastname")[0]);
+                    
                     user.setDateofbirth(params.get("dob")[0]);
-                    user.setGender(params.get("gender")[0]);
+                    user.setGender(params.get("gender")[0].equals("")  ? null : params.get("gender")[0]);
                     user.setAddress(params.get("address")[0]);
                     user.setEmail(params.get("email")[0]);
                     user.setTelephone(params.get("phone")[0].replaceAll( "[^\\d]", "" ));

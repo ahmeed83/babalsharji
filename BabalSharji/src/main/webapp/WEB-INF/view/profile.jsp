@@ -44,7 +44,7 @@
                                     <tr>
                                     <tr>
                                         <td>Gender</td>
-                                        <td><c:out value="${user.getGender()}"/></td>
+                                        <td><c:out value="${user.getGender().equals('0')? 'Female' : user.getGender() }"/></td>
                                     </tr>
                                     <tr>
                                         <td><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Home Address</td>
@@ -86,8 +86,8 @@
                                             <td>
                                                 <select name="gender" class="form-control" style="padding: 0px 7px;">
                                                     <option <c:if test="${user.getGender() == null}">selected</c:if> value="">select gender</option>
-                                                    <option <c:if test="${user.getGender() eq 'Male'}">selected</c:if>>Male</option>
-                                                    <option <c:if test="${user.getGender() eq 'Female'}">selected</c:if>>Female</option>
+                                                    <option <c:if test="${user.getGender() eq 'Male'}">selected</c:if> value="Male" >Male</option>
+                                                    <option <c:if test="${user.getGender() eq ''}">selected</c:if> value="0" >Female</option>
                                                 </select>
                                             </td>
                                         </tr>
