@@ -63,7 +63,7 @@
                         <div class="row">
                         <c:choose>
                             <c:when test="${authenticateduserid == null}">
-                                <a href="login" class="btn btn-success navbar-btn pull-right">login</a>
+                                <a href="login" class="btn btn-success navbar-btn pull-right">login or sign up</a>
                             </c:when>
                             <c:otherwise>
                                 <a href="profile" class="btn navbar-btn pull-left">welcome <c:out value="${name}"/></a>

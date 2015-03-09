@@ -1,15 +1,26 @@
 <%@ page pageEncoding="UTF-8" %>
 <div class="footer">
     <div class="container">
-        <div class="col-md-8" style="margin: 10px;">
-            <div style="display:inline-block; padding-right: 2em;"><a href="#">Info</a></div>
-            <div style="display:inline-block; padding-right: 2em;"><a href="#">Contact</a></div>
-            <div style="display:inline-block; padding-right: 2em;"><a href="#">Terms</a></div>
-            <div style="display:inline-block; padding-right: 2em;"><a href="#">Privacy</a></div>
+        <div class="col-md-8 line">
+            <div class="boxbtn"><a href="#">Info</a></div>
+            <div class="boxbtn"><a href="#">Contact</a></div>
+            <div class="boxbtn"><a href="#">Terms</a></div>
+            <div class="boxbtn"><a href="#">Privacy</a></div>
         </div>
-        <p class="text-muted" style="margin-top: 10px;text-align: right">Powered by A. Aziz and T. van Sloten</p>
+        <p class="text-muted poweredby">Powered by A. Aziz and T. van Sloten</p>
     </div>
 </div>
+<style>
+    .footer .line {
+        margin: 10px;
+    }
+    .footer .boxbtn {
+        display:inline-block; padding-right: 2em;
+    }
+    .footer .poweredby {
+        margin-top: 10px;text-align: right
+    }
+</style>
 <script type="text/javascript" src="${initParam.jsPath}jquery.min.js"></script>
 <script type="text/javascript" src="${initParam.jsPath}bootstrap.js"></script>
 <script type="text/javascript" src="${initParam.jsPath}bootstrap-datepicker.js"></script>
