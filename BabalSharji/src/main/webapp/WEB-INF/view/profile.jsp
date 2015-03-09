@@ -9,10 +9,24 @@
         display: inline-block;
         height: 23px;
     }
+    .row .userheader {
+        border-bottom: 1px solid #ddd; padding-bottom: 10px;
+    }
+    .row .profilepicture {
+        width: 200px; display: inline-block; margin-right: 50px;
+    }
+    .table-user-information .form-control {
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+    .table-user-information .gendercombo {
+        padding: 0px 7px;
+    }
+    
 </style>
         <div class="container">
             <div class="row">
-                <h3 style="border-bottom: 1px solid #ddd; padding-bottom: 10px;"><c:out value="${user.getFirstname()} ${user.getLastname()}"/>
+                <h3 class="userheader"><c:out value="${user.getFirstname()} ${user.getLastname()}"/>
                     <c:if test="${edit != true}">
                         <a href="editprofile" class="btn btn-success pull-right">edit</a>
                     </c:if>
@@ -21,7 +35,7 @@
                     </c:if>
                 </h3>
                 <a href="#">
-                    <div class="thumbnail col-md-3" style="width: 200px; display: inline-block; margin-right: 50px;">
+                    <div class="thumbnail col-md-3 profilepicture">
                         <img src="http://www.localcrimenews.com/wp-content/uploads/2013/07/default-user-icon-profile.png" alt="" class="img-circle img-responsive">
                         <br>
                         <p class="text-center">Change Profile</p>
@@ -63,14 +77,14 @@
                         </c:when>
                         <c:otherwise>   
                             <form id="profile-form" action="submitprofile" method="POST">
-                                <table class="table table-user-information">
+                                <table class="table table-user-information"> 
                                     <tbody>
                                         <tr>
                                             <td>Name</td>
                                             <td>
                                                 <input class="form-control" type="text" name="firstname" placeholder="firstname" value="<c:out value="${user.getFirstname()}"/>"/>
                                                 <br>
-                                                <input style="margin-top: 5px;" class="form-control" type="text" name="lastname" placeholder="lastname" value="<c:out value="${user.getLastname()}"/>"/>
+                                                <input class="form-control" type="text" name="lastname" placeholder="lastname" value="<c:out value="${user.getLastname()}"/>"/>
                                             </td>
                                         </tr>
 
@@ -84,7 +98,7 @@
                                         </tr><tr>
                                             <td>Gender</td>
                                             <td>
-                                                <select name="gender" class="form-control" style="padding: 0px 7px;">
+                                                <select name="gender" class="form-control gendercombo">
                                                     <option <c:if test="${user.getGender() == null}">selected</c:if> value="">select gender</option>
                                                     <option <c:if test="${user.getGender() eq 'Male'}">selected</c:if> value="Male" >Male</option>
                                                     <option <c:if test="${user.getGender() eq ''}">selected</c:if> value="0" >Female</option>
