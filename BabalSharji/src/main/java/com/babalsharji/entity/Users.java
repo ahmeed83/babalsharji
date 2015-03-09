@@ -1,8 +1,11 @@
 package com.babalsharji.entity;
 
 import java.io.Serializable;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -105,10 +108,10 @@ public class Users implements Serializable {
     }
 
     public String getSimpleTelephone() {
-        if(this.telephone != null) return "";
+        if(this.telephone == null) return "";
         String number = this.getTelephone();
         String formatedNumber = String.format("%s-%s %s %s", number.substring(0, 2),
-                number.substring(2, 5), number.substring(5, 8), number.substring(8, 10));
+                number.substring(2, 5), number.substring(5, 8), number.substring(8, number.length()));
         return formatedNumber;
     }
 
@@ -134,6 +137,16 @@ public class Users implements Serializable {
         return df.format(this.getDateofbirth());
     }
 
+    public void setDateofbirth(String dateofbirth) {
+        SimpleDateFormat df = new SimpleDateFormat("MM-dd-yyyy");
+        dateofbirth = dateofbirth.replace('/', '-');
+        try {
+            setDateofbirth(df.parse(dateofbirth));
+        } catch (ParseException ex) {
+            Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     public void setDateofbirth(Date dateofbirth) {
         this.dateofbirth = dateofbirth;
     }

@@ -13,7 +13,12 @@
         <div class="container">
             <div class="row">
                 <h3 style="border-bottom: 1px solid #ddd; padding-bottom: 10px;"><c:out value="${user.getFirstname()} ${user.getLastname()}"/>
-                    <a href="editprofile" class="btn btn-success pull-right">edit</a>
+                    <c:if test="${edit != true}">
+                        <a href="editprofile" class="btn btn-success pull-right">edit</a>
+                    </c:if>
+                    <c:if test="${edit == true}">
+                        <button type="submit" form="profile-form" class="btn btn-warning pull-right">submit</button>
+                    </c:if>
                 </h3>
                 <a href="#">
                     <div class="thumbnail col-md-3" style="width: 200px; display: inline-block; margin-right: 50px;">
@@ -57,7 +62,7 @@
                             </table>
                         </c:when>
                         <c:otherwise>   
-                            <form action="" method="POST">
+                            <form id="profile-form" action="submitprofile" method="POST">
                                 <table class="table table-user-information">
                                     <tbody>
                                         <tr>
@@ -72,13 +77,19 @@
                                         <tr>
                                             <td>Date of Birth</td>
                                             <td>
-                                                <div class="span5 col-md-5" id="sandbox-container"><input type="text"></div>
+                                                <div class="popup"><input class="form-control" name="dob" type="text" value="${user.getSimpleDateofbirth()}"></div>
                                             </td>
                                         </tr>
                                         <tr>
                                         </tr><tr>
                                             <td>Gender</td>
-                                            <td>male</td>
+                                            <td>
+                                                <select name="gender" class="form-control" style="padding: 0px 7px;">
+                                                    <option <c:if test="${user.getGender() == null}">selected</c:if> value="">select gender</option>
+                                                    <option <c:if test="${user.getGender() eq 'Male'}">selected</c:if>>Male</option>
+                                                    <option <c:if test="${user.getGender() eq 'Female'}">selected</c:if>>Female</option>
+                                                </select>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Home Address</td>

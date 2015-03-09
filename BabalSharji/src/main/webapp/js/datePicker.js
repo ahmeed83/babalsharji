@@ -1,12 +1,8 @@
-//$(function () {
-//    $("#dpicker").datepicker(
-//            {
-//        format: "mm/dd/yyyy",
-//        todayBtn: true,
-//        orientation: "bottom auto",
-//        multidate: false,
-//        autoclose: true,
-//        todayHighlight: true
-//    });
-//});
-$('#sandbox-container input').datepicker({});
+$(document).ready(function () {
+    $('.popup input').datepicker({
+    format: "mm/dd/yyyy",
+    multidate: false,
+    autoclose: true,
+    todayHighlight: true
+});
+});

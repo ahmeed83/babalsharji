@@ -12,6 +12,8 @@
 </div>
 <script type="text/javascript" src="${initParam.jsPath}jquery.min.js"></script>
 <script type="text/javascript" src="${initParam.jsPath}bootstrap.js"></script>
+<script type="text/javascript" src="${initParam.jsPath}bootstrap-datepicker.js"></script>
+<link rel="stylesheet" type="text/css" href="${initParam.cssPath}datepicker.css">
 <script type="text/javascript" src="${initParam.jsPath}datePicker.js"></script>
 </body>
 </html>
